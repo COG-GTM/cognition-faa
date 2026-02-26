@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #000;
+    background: #fff;
+  }
+
+  * {
+    border-radius: 0 !important;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply font-mono text-xs font-bold tracking-[0.2em] uppercase text-black mb-2;
+  }
+
+  .section-container {
+    @apply max-w-[1200px] mx-auto px-6 py-20;
+  }
+
+  .data-table {
+    @apply w-full border-collapse;
+  }
+
+  .data-table th {
+    @apply font-mono text-xs font-bold tracking-wider uppercase text-left p-4 border border-[#E5E5E5] bg-[#F8F8F8];
+  }
+
+  .data-table td {
+    @apply font-sans text-sm p-4 border border-[#E5E5E5];
+  }
+
+  .data-table tr:hover td {
+    @apply bg-[#F8F8F8];
+  }
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #003B71;
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 1rem;
+  background: #003B71;
+  color: #fff;
+  z-index: 100;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}
