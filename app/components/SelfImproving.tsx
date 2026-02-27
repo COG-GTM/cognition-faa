@@ -13,7 +13,7 @@ export default function SelfImproving() {
           CONTINUOUS IMPROVEMENT
         </h2>
         <p className="font-sans text-base text-black/60 mb-12 max-w-2xl">
-          DevinClaw doesn&apos;t just modernize &mdash; it learns.
+          Devin + Orchestrator doesn&apos;t just modernize &mdash; it learns.
         </p>
 
         {/* Steps */}

@@ -87,7 +87,7 @@ export default function ArchitectureDiagram() {
     <section
       id="architecture"
       className="border-b border-[#E5E5E5]"
-      aria-label="DevinClaw Architecture"
+      aria-label="Devin Architecture"
     >
       <div className="section-container">
         <p className="section-title">SYSTEM ARCHITECTURE</p>
@@ -104,7 +104,7 @@ export default function ArchitectureDiagram() {
             viewBox="0 0 1060 340"
             className="w-full max-w-[1060px] mx-auto"
             role="img"
-            aria-label="Architecture diagram showing DevinClaw system components: Orchestrator, Brain/Knowledge, and six execution layers"
+            aria-label="Architecture diagram showing Devin system components: Orchestrator, Brain/Knowledge, and six execution layers"
           >
             {/* Orchestrator */}
             <NodeBox

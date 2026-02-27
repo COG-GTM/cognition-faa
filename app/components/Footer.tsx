@@ -15,7 +15,7 @@ export default function Footer() {
               Powered by Devin AI
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3">
-              {["devin.ai", "deepwiki.com", "windsurf.com", "openclaw.ai"].map(
+              {["devin.ai", "deepwiki.com", "windsurf.com"].map(
                 (site) => (
                   <span
                     key={site}

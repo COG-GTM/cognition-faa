@@ -8,7 +8,7 @@ export const stats = [
 export const sdlcPhases = [
   {
     phase: "Requirements",
-    tool: "OpenClaw + Jira",
+    tool: "Orchestrator + Jira",
     capability: "NL \u2192 structured spec",
   },
   {
@@ -169,7 +169,7 @@ export const useCases = [
 export const securityPlatforms = [
   { platform: "Windsurf", fedramp: "FedRAMP High", il: "IL5-IL6" },
   { platform: "Devin", fedramp: "SOC 2 Type II", il: "\u2014" },
-  { platform: "OpenClaw", fedramp: "Open Source", il: "\u2014" },
+  { platform: "Orchestrator", fedramp: "Open Source", il: "\u2014" },
 ];
 
 export const complianceFrameworks = [
@@ -250,7 +250,7 @@ export const selfImprovingTimeline = [
 export const architectureNodes = [
   {
     id: "orchestrator",
-    label: "ORCHESTRATOR (OpenClaw)",
+    label: "ORCHESTRATOR",
     subtitle: "Task routing \u2022 Governance \u2022 Audit",
     detail: "MCP: Jira, Slack, Teams",
     description:
@@ -389,7 +389,7 @@ export const objectiveLimitations = [
   {
     title: "ORCHESTRATOR HARDENING",
     description:
-      "OpenClaw is single-operator, local-first with plaintext token risks. Must be treated as untrusted layer or hardened/forked for government production.",
+      "The orchestration layer is single-operator, local-first. Must be hardened for government production with proper token management and access controls.",
   },
   {
     title: "ENVIRONMENT HETEROGENEITY",
@@ -461,9 +461,9 @@ export const platformCapabilities = [
   },
   {
     title: "AGENT HARNESS",
-    tag: "OPENCLAW",
+    tag: "ORCHESTRATOR",
     description:
-      "OpenClaw's agent harness spawns, monitors, and governs autonomous sub-agents. Spawn 10 Devin sessions in parallel, collect their artifacts, validate SDLC compliance, and merge results — all from a single orchestration command.",
+      "The orchestrator spawns, monitors, and governs autonomous sub-agents. Spawn 10 Devin sessions in parallel, collect their artifacts, validate SDLC compliance, and merge results — all from a single orchestration command.",
     highlights: [
       "Spawn parallel sub-agents with one command",
       "Auto-collect artifacts on completion",

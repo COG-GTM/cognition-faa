@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "DEVIN // FAA — AI-Powered Modernization",
   description:
-    "Cognition AI's DevinClaw platform for FAA application and database modernization. 200+ applications, 3,000 databases, one framework.",
+    "Cognition AI's Devin + Orchestrator platform for FAA application and database modernization. 200+ applications, 3,000 databases, one framework.",
   keywords: [
     "FAA",
     "modernization",
