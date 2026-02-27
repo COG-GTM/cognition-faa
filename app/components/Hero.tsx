@@ -1,3 +1,5 @@
+import USFlag from "./USFlag";
+
 export default function Hero() {
   return (
     <section
@@ -6,8 +8,9 @@ export default function Hero() {
       aria-label="Hero"
     >
       <div className="section-container w-full">
-        <p className="font-mono text-sm font-bold tracking-[0.3em] text-[#003B71] mb-8">
-          DEVIN // FAA
+        <p className="font-mono text-sm font-bold tracking-[0.3em] text-[#003B71] mb-8 flex items-center gap-3">
+          <USFlag />
+          COGNITION // FAA
         </p>
         <h1 className="font-mono text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black mb-6 max-w-4xl">
           AI-Powered Application and Database Modernization

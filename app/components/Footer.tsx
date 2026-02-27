@@ -1,3 +1,5 @@
+import USFlag from "./USFlag";
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white" role="contentinfo">
@@ -5,11 +7,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           {/* Left */}
           <div>
-            <p className="font-mono text-sm font-bold tracking-[0.3em] text-white mb-6">
-              DEVIN <span className="text-[#4A90D9]">//</span> FAA
+            <p className="font-mono text-sm font-bold tracking-[0.3em] text-white mb-6 flex items-center gap-3">
+              <USFlag />
+              COGNITION <span className="text-[#4A90D9]">//</span> FAA
             </p>
             <p className="font-sans text-sm text-white/60 mb-1">
-              Powered by Cognition AI
+              Powered by Devin AI
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3">
               {["devin.ai", "deepwiki.com", "windsurf.com", "openclaw.ai"].map(

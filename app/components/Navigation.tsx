@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { navLinks } from "../lib/data";
+import USFlag from "./USFlag";
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -15,9 +16,10 @@ export default function Navigation() {
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-14">
         <a
           href="#hero"
-          className="font-mono text-sm font-bold tracking-wider text-black no-underline"
+          className="font-mono text-sm font-bold tracking-wider text-black no-underline flex items-center gap-3"
         >
-          DEVIN <span className="text-[#003B71]">//</span> FAA
+          <USFlag />
+          COGNITION <span className="text-[#003B71]">//</span> FAA
         </a>
 
         {/* Desktop nav */}

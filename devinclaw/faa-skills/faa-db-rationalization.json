@@ -1,0 +1,131 @@
+{
+  "skill": "db-rationalization",
+  "overlay": "faa",
+  "version": "1.0.0",
+  "description": "Database rationalization and consolidation for FAA's 3,000+ database estate",
+  "intentPhrases": [
+    "database rationalization",
+    "database consolidation",
+    "Oracle migration",
+    "database inventory",
+    "reduce database footprint",
+    "database modernization",
+    "Oracle to PostgreSQL",
+    "DB2 migration",
+    "database decommission",
+    "schema consolidation",
+    "database licensing cost reduction"
+  ],
+  "requiredKnowledge": [
+    "faa-knowledge/faa-tech-stack.md",
+    "faa-knowledge/faa-systems-inventory.md"
+  ],
+  "playbook": "faa-playbooks/migrate-faa-oracle.devin.md",
+  "parameters": {
+    "scope": {
+      "totalDatabases": 3000,
+      "estimatedDistribution": {
+        "oracle": 1800,
+        "db2": 400,
+        "sqlServer": 300,
+        "postgresql": 200,
+        "other": 300
+      }
+    },
+    "rationalizationCategories": {
+      "migrate": {
+        "description": "Move to target platform (Oracle → PostgreSQL)",
+        "criteria": [
+          "Standard SQL usage (minimal vendor-specific features)",
+          "Low PL/SQL complexity (< 500 stored procedure LOC)",
+          "No Oracle-specific features (Spatial, AQ, XMLDB)",
+          "Application uses ORM (Hibernate/JPA) for data access"
+        ]
+      },
+      "consolidate": {
+        "description": "Merge multiple databases into fewer instances",
+        "criteria": [
+          "Multiple small databases serving same application",
+          "Dev/test/staging instances that can share infrastructure",
+          "Databases with < 1GB total size",
+          "Databases with < 10 concurrent connections"
+        ]
+      },
+      "retire": {
+        "description": "Decommission database (application retired or data archived)",
+        "criteria": [
+          "No active application connections in 90+ days",
+          "Application officially decommissioned",
+          "Data retention requirements met (archived to S3/tape)",
+          "No downstream dependencies"
+        ]
+      },
+      "retain": {
+        "description": "Keep on current platform (too complex/risky to move)",
+        "criteria": [
+          "Safety-critical NAS system (ERAM, STARS)",
+          "Heavy PL/SQL business logic (> 5,000 LOC in packages)",
+          "Real-time latency requirements (< 10ms query response)",
+          "Vendor-locked COTS application"
+        ]
+      }
+    },
+    "migrationTargets": {
+      "primary": "postgresql-16",
+      "cloudManaged": "aws-rds-postgresql",
+      "timeSeries": "timescaledb",
+      "document": "mongodb-7"
+    },
+    "assessmentMetrics": [
+      {
+        "name": "tableCount",
+        "description": "Number of tables in schema"
+      },
+      {
+        "name": "totalDataGB",
+        "description": "Total data size in GB"
+      },
+      {
+        "name": "plsqlLOC",
+        "description": "Lines of PL/SQL code"
+      },
+      {
+        "name": "oracleSpecificFeatures",
+        "description": "Count of Oracle-only features used"
+      },
+      {
+        "name": "applicationCount",
+        "description": "Number of applications connecting"
+      },
+      {
+        "name": "dailyTransactions",
+        "description": "Average daily transaction count"
+      },
+      {
+        "name": "crossSchemaDepCount",
+        "description": "Number of cross-schema dependencies"
+      },
+      {
+        "name": "lastAccessDate",
+        "description": "Most recent application query"
+      }
+    ],
+    "costModel": {
+      "oracleLicensePerCore": "Varies by agreement — typically $47,500 list for Enterprise Edition",
+      "postgresqlCost": "Open source — infrastructure + support only",
+      "migrationCostPerDB": {
+        "simple": "40-80 hours",
+        "moderate": "160-320 hours",
+        "complex": "500-1000+ hours"
+      }
+    },
+    "prioritization": {
+      "wave1": "Low-complexity, non-NAS-critical, ORM-based applications",
+      "wave2": "Moderate PL/SQL, mission-support systems",
+      "wave3": "Complex PL/SQL, SWIM backend databases",
+      "wave4": "DB2 mainframe databases (requires application rewrite)",
+      "noTouch": "ERAM, STARS, real-time NAS operational databases"
+    }
+  },
+  "tags": ["faa", "database", "rationalization", "oracle", "postgresql", "migration", "consolidation"]
+}

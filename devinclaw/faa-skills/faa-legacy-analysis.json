@@ -1,0 +1,61 @@
+{
+  "skill": "legacy-analysis",
+  "overlay": "faa",
+  "version": "1.0.0",
+  "description": "Analyze FAA legacy applications for modernization readiness",
+  "intentPhrases": [
+    "analyze this FAA system",
+    "assess this legacy application",
+    "modernization assessment",
+    "technical debt analysis",
+    "evaluate this NAS system",
+    "what's the state of this codebase",
+    "can we modernize this",
+    "refactor assessment",
+    "legacy code review",
+    "ERAM analysis",
+    "TFMS code review",
+    "SWIM service assessment",
+    "NOTAM system evaluation",
+    "mainframe assessment",
+    "COBOL analysis",
+    "PL/SQL review"
+  ],
+  "requiredKnowledge": [
+    "faa-knowledge/faa-systems-inventory.md",
+    "faa-knowledge/faa-tech-stack.md",
+    "faa-knowledge/faa-coding-conventions.md"
+  ],
+  "playbook": "faa-playbooks/analyze-faa-legacy.devin.md",
+  "parameters": {
+    "languages": ["java", "cobol", "plsql", "c", "cpp", "ada"],
+    "frameworks": ["spring-boot", "struts", "ejb", "cics"],
+    "databases": ["oracle", "db2", "postgresql"],
+    "staticAnalysis": {
+      "tool": "sonarqube",
+      "profile": "faa-standard",
+      "qualityGate": {
+        "coverage": 80,
+        "duplicatedLines": 5,
+        "criticalIssues": 0,
+        "blockerIssues": 0
+      }
+    },
+    "riskDimensions": [
+      "coupling",
+      "dataComplexity",
+      "safetyCriticality",
+      "teamKnowledge",
+      "testCoverage",
+      "codeVolume"
+    ],
+    "modernizationStrategies": [
+      "retire",
+      "replace",
+      "refactor",
+      "replatform",
+      "retain"
+    ]
+  },
+  "tags": ["faa", "legacy", "modernization", "assessment", "nas"]
+}

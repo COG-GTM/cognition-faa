@@ -398,9 +398,97 @@ export const objectiveLimitations = [
   },
 ];
 
+export const platformCapabilities = [
+  {
+    title: "COMPUTER USE + VIRTUAL DESKTOP",
+    tag: "DEVIN 2.2",
+    description:
+      "Devin opens your application in a virtual desktop, clicks through user flows, fills forms, and verifies visual correctness — the same way a human QA engineer would. End-to-end verification that goes beyond unit tests.",
+    highlights: [
+      "Visual regression testing on every deployment",
+      "Form submission and workflow validation",
+      "Screenshot evidence captured for audit trail",
+      "No test scripts required — Devin navigates like a user",
+    ],
+  },
+  {
+    title: "SCHEDULED SESSIONS",
+    tag: "LIGHTS-OUT",
+    description:
+      "Automated Devin sessions run on schedule — nightly security scans, weekly regression suites, monthly compliance audits. No human initiation required. Results delivered as structured reports with full evidence packs.",
+    highlights: [
+      "Nightly: dependency scan + CVE triage",
+      "Weekly: full regression suite + coverage report",
+      "Monthly: STIG compliance audit + remediation PRs",
+      "Digest reports delivered to Slack, Teams, or email",
+    ],
+  },
+  {
+    title: "MULTI-AGENT ORCHESTRATION",
+    tag: "ACP",
+    description:
+      "Agent Context Protocol enables multiple AI agents — Devin, Claude Code, Codex — to operate under the same governance framework. One agent builds, another reviews, a third tests. All governed by the same SDLC constitution, all producing the same artifact contracts.",
+    highlights: [
+      "Devin builds → Claude Code reviews → Devin tests",
+      "Independent agents verify each other's work",
+      "Single governance layer across all agents",
+      "Agent-to-agent handoff via standardized artifact contracts",
+    ],
+  },
+  {
+    title: "AUTO-REVIEW + AUTO-FIX",
+    tag: "DEVIN REVIEW",
+    description:
+      "Every pull request is automatically analyzed by Devin Review — an independent verification layer separate from the session that wrote the code. Bug Catcher identifies issues with severity and confidence scoring. Auto-Fix applies corrections and re-verifies.",
+    highlights: [
+      "Smart diff: copy/move detection, not just line changes",
+      "Bug Catcher: severity + confidence on every finding",
+      "Auto-Fix: patches applied and re-verified automatically",
+      "Respects REVIEW.md and AGENTS.md repo instructions",
+    ],
+  },
+  {
+    title: "SERVICE USERS + RBAC",
+    tag: "ENTERPRISE",
+    description:
+      "No developer credentials in automation pipelines. Devin v3 API uses dedicated service users with role-based access control. Every session is attributed, every action is auditable, every secret is scoped to the session that needs it.",
+    highlights: [
+      "Service users with scoped API keys",
+      "Session-scoped secrets (zero persistence)",
+      "User attribution via create_as_user_id",
+      "90-day key rotation policy",
+    ],
+  },
+  {
+    title: "AGENT HARNESS",
+    tag: "OPENCLAW",
+    description:
+      "OpenClaw's agent harness spawns, monitors, and governs autonomous sub-agents. Spawn 10 Devin sessions in parallel, collect their artifacts, validate SDLC compliance, and merge results — all from a single orchestration command.",
+    highlights: [
+      "Spawn parallel sub-agents with one command",
+      "Auto-collect artifacts on completion",
+      "SDLC validation before accepting results",
+      "Kill, steer, or redirect agents in real-time",
+    ],
+  },
+  {
+    title: "MCP INTEGRATION STANDARD",
+    tag: "INTEROPERABILITY",
+    description:
+      "Model Context Protocol is the universal interface between agents and tools. Any orchestrator can query DeepWiki intelligence, any agent can connect to Jira, Sentry, Datadog, or databases — all through the same standardized tool interface. No vendor lock-in.",
+    highlights: [
+      "DeepWiki MCP: repo intelligence without a session",
+      "Devin MCP: private repo access with API key",
+      "Tool MCP: Jira, Slack, Sentry, Datadog, databases",
+      "Any orchestrator, any agent, one standard",
+    ],
+  },
+];
+
 export const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "Architecture", href: "#architecture" },
+  { label: "Platform", href: "#platform" },
   { label: "Capabilities", href: "#capabilities" },
   { label: "Use Cases", href: "#use-cases" },
   { label: "Security", href: "#security" },

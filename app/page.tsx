@@ -2,6 +2,7 @@ import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import StatCards from "./components/StatCards";
 import ArchitectureDiagram from "./components/ArchitectureDiagram";
+import PlatformCapabilities from "./components/PlatformCapabilities";
 import SDLCMapping from "./components/SDLCMapping";
 import CapabilitiesGrid from "./components/CapabilitiesGrid";
 import UseCases from "./components/UseCases";
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <StatCards />
         <ArchitectureDiagram />
+        <PlatformCapabilities />
         <SDLCMapping />
         <CapabilitiesGrid />
         <UseCases />

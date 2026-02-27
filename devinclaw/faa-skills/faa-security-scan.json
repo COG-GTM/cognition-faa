@@ -1,0 +1,108 @@
+{
+  "skill": "security-scan",
+  "overlay": "faa",
+  "version": "1.0.0",
+  "description": "STIG and NIST 800-53 compliance scanning for FAA systems",
+  "intentPhrases": [
+    "security audit",
+    "STIG compliance",
+    "NIST assessment",
+    "ATO readiness",
+    "authority to operate",
+    "security scan",
+    "vulnerability assessment",
+    "FISMA compliance",
+    "POA&M generation",
+    "security hardening",
+    "FIPS compliance check"
+  ],
+  "requiredKnowledge": [
+    "faa-knowledge/faa-tech-stack.md",
+    "faa-knowledge/faa-systems-inventory.md"
+  ],
+  "playbook": "faa-playbooks/faa-security-audit.devin.md",
+  "parameters": {
+    "stigProfiles": {
+      "rhel8": {
+        "id": "V-230221",
+        "profile": "xccdf_org.ssgproject.content_profile_stig",
+        "benchmark": "ssg-rhel8-ds.xml"
+      },
+      "rhel9": {
+        "id": "V-257777",
+        "profile": "xccdf_org.ssgproject.content_profile_stig",
+        "benchmark": "ssg-rhel9-ds.xml"
+      },
+      "oracle19c": {
+        "id": "V-220219",
+        "categories": [
+          "Authentication",
+          "Authorization",
+          "Audit",
+          "Encryption",
+          "Configuration",
+          "Patching"
+        ]
+      },
+      "postgresql": {
+        "id": "V-233505",
+        "categories": [
+          "Authentication",
+          "Authorization",
+          "Audit",
+          "Encryption",
+          "Logging",
+          "Configuration"
+        ]
+      },
+      "tomcat": {
+        "id": "V-222927",
+        "categories": [
+          "TLS",
+          "SessionManagement",
+          "DefaultContent",
+          "ErrorHandling",
+          "Logging"
+        ]
+      },
+      "apacheHttpd": {
+        "id": "V-214228",
+        "categories": [
+          "TLS",
+          "Headers",
+          "DirectoryBrowsing",
+          "CGI",
+          "Logging"
+        ]
+      }
+    },
+    "nistControlFamilies": [
+      "AC",
+      "AU",
+      "CM",
+      "IA",
+      "SC",
+      "SI",
+      "RA",
+      "CA",
+      "PL",
+      "SA"
+    ],
+    "fipsCategory": {
+      "nasOperational": "HIGH",
+      "missionSupport": "MODERATE",
+      "publicInformational": "LOW"
+    },
+    "severityMapping": {
+      "CAT_I": "critical",
+      "CAT_II": "high",
+      "CAT_III": "medium"
+    },
+    "patchTimelines": {
+      "CAT_I": "30 days",
+      "CAT_II": "90 days",
+      "CAT_III": "180 days"
+    }
+  },
+  "tags": ["faa", "security", "stig", "nist", "ato", "compliance"]
+}
