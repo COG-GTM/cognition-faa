@@ -15,7 +15,7 @@ export default function PlatformCapabilities() {
       <div className="section-container">
         <p className="section-title">PLATFORM</p>
         <h2 className="font-mono text-2xl md:text-3xl font-bold text-black mb-4">
-          DEVIN 2.2 + OPENCLAW
+          DEVIN 2.2 + ORCHESTRATOR
         </h2>
         <p className="font-sans text-sm text-black/60 mb-12 max-w-2xl">
           Beyond code generation. A complete autonomous software engineering

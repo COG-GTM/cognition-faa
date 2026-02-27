@@ -92,7 +92,7 @@ export default function ArchitectureDiagram() {
       <div className="section-container">
         <p className="section-title">SYSTEM ARCHITECTURE</p>
         <h2 className="font-mono text-2xl md:text-3xl font-bold text-black mb-4">
-          THE DEVINCLAW ARCHITECTURE
+          DEVIN + ORCHESTRATOR ARCHITECTURE
         </h2>
         <p className="font-sans text-sm text-black/50 mb-10">
           Click any node to view details.
