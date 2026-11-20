@@ -150,17 +150,17 @@
 <!-- data -->
 <g id="node10" class="node">
 <title>data</title>
-<path fill="#e8f0fa" stroke="black" d="M1274,-359.74C1274,-364.28 1218.42,-367.96 1150,-367.96 1081.58,-367.96 1026,-364.28 1026,-359.74 1026,-359.74 1026,-285.69 1026,-285.69 1026,-281.15 1081.58,-277.46 1150,-277.46 1218.42,-277.46 1274,-281.15 1274,-285.69 1274,-285.69 1274,-359.74 1274,-359.74"/>
-<path fill="none" stroke="black" d="M1274,-359.74C1274,-355.2 1218.42,-351.51 1150,-351.51 1081.58,-351.51 1026,-355.2 1026,-359.74"/>
+<path fill="#e8f0fa" stroke="black" d="M1253.5,-359.74C1253.5,-364.28 1207.11,-367.96 1150,-367.96 1092.89,-367.96 1046.5,-364.28 1046.5,-359.74 1046.5,-359.74 1046.5,-285.69 1046.5,-285.69 1046.5,-281.15 1092.89,-277.46 1150,-277.46 1207.11,-277.46 1253.5,-281.15 1253.5,-285.69 1253.5,-285.69 1253.5,-359.74 1253.5,-359.74"/>
+<path fill="none" stroke="black" d="M1253.5,-359.74C1253.5,-355.2 1207.11,-351.51 1150,-351.51 1092.89,-351.51 1046.5,-355.2 1046.5,-359.74"/>
 <text text-anchor="middle" x="1150" y="-336.91" font-family="DejaVu Sans" font-size="16.00">lib/data.ts</text>
-<text text-anchor="middle" x="1150" y="-318.91" font-family="DejaVu Sans" font-size="16.00">all copy and content arrays</text>
+<text text-anchor="middle" x="1150" y="-318.91" font-family="DejaVu Sans" font-size="16.00">section content arrays</text>
 <text text-anchor="middle" x="1150" y="-300.91" font-family="DejaVu Sans" font-size="16.00">(no API, no database)</text>
 </g>
 <!-- client&#45;&gt;data -->
 <g id="edge4" class="edge">
 <title>client&#45;&gt;data</title>
-<path fill="none" stroke="#555555" d="M838.2,-431.05C895.08,-411.47 963.22,-388.01 1021.28,-368.03"/>
-<polygon fill="#555555" stroke="#555555" points="1022.56,-371.29 1030.88,-364.72 1020.28,-364.67 1022.56,-371.29"/>
+<path fill="none" stroke="#555555" d="M838.2,-431.05C900.16,-409.72 975.49,-383.79 1036.59,-362.76"/>
+<polygon fill="#555555" stroke="#555555" points="1037.95,-365.99 1046.27,-359.42 1035.67,-359.37 1037.95,-365.99"/>
 <text text-anchor="middle" x="985.5" y="-391.69" font-family="DejaVu Sans" font-size="13.00">imports</text>
 </g>
 <!-- server&#45;&gt;data -->

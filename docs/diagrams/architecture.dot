@@ -22,7 +22,7 @@ digraph cognition_faa {
     page     [label="page.tsx\ncomposes the sections in order"];
     client   [label="Client components (\"use client\", useState)\nNavigation: mobile menu\nArchitectureDiagram: node detail panel\nPlatformCapabilities: expandable cards", fillcolor="#DCE8F5"];
     server   [label="Static sections (no state)\nHero, StatCards, SDLCMapping, CapabilitiesGrid,\nUseCases, SecurityCompliance, VerificationSystem,\nMethodology, SelfImproving, ObjectiveAssessment,\nFooter, USFlag"];
-    data     [label="lib/data.ts\nall copy and content arrays\n(no API, no database)", shape=cylinder, fillcolor="#E8F0FA"];
+    data     [label="lib/data.ts\nsection content arrays\n(no API, no database)", shape=cylinder, fillcolor="#E8F0FA"];
     {rank=same; client; server;}
   }
 
