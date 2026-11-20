@@ -1,0 +1,56 @@
+// cognition-faa architecture. Edit this file, then run ./render.sh.
+digraph cognition_faa {
+  graph [rankdir=TB, fontname="DejaVu Sans", fontsize=18, labelloc=t, nodesep=0.35, ranksep=0.55, pad=0.3,
+         label="cognition-faa: Next.js static showcase (app/) and DevinClaw FAA overlay (devinclaw/)"];
+  node  [shape=box, style="rounded,filled", fillcolor=white, fontname="DejaVu Sans", fontsize=16, margin="0.18,0.08"];
+  edge  [fontname="DejaVu Sans", fontsize=13, color="#555555"];
+
+  browser  [label="Browser\n(single page, #anchor nav)", shape=oval, fillcolor="#FFF4D6"];
+  fonts    [label="Google Fonts\n(Inter, JetBrains Mono)\nfetched by the browser", shape=oval, fillcolor="#FFF4D6"];
+
+  subgraph cluster_build {
+    label="Build: npm run build (next build, output: \"export\")"; style="rounded"; color="#888888"; fontsize=16;
+    nextcfg  [label="next.config.ts\noutput: \"export\""];
+    css      [label="Tailwind + PostCSS\ntailwind.config.ts, app/globals.css"];
+    out      [label="out/\nindex.html + _next/ assets\n(any static host)", shape=folder, fillcolor="#E8F0FA"];
+    {rank=same; nextcfg; css;}
+  }
+
+  subgraph cluster_app {
+    label="app/ (Next.js 15 App Router, React 18, TypeScript)"; style="rounded,filled"; fillcolor="#F4F7FB"; color="#003B71"; fontsize=16;
+    layout   [label="layout.tsx\nmetadata, skip link"];
+    page     [label="page.tsx\ncomposes the sections in order"];
+    client   [label="Client components (\"use client\", useState)\nNavigation: mobile menu\nArchitectureDiagram: node detail panel\nPlatformCapabilities: expandable cards", fillcolor="#DCE8F5"];
+    server   [label="Static sections (no state)\nHero, StatCards, SDLCMapping, CapabilitiesGrid,\nUseCases, SecurityCompliance, VerificationSystem,\nMethodology, SelfImproving, ObjectiveAssessment,\nFooter, USFlag"];
+    data     [label="lib/data.ts\nall copy and content arrays\n(no API, no database)", shape=cylinder, fillcolor="#E8F0FA"];
+    {rank=same; client; server;}
+  }
+
+  subgraph cluster_overlay {
+    label="devinclaw/ (FAA overlay, Markdown + JSON; not imported by app/)"; style="rounded,filled"; fillcolor="#F6F6F6"; color="#666666"; fontsize=16;
+    knowledge [label="faa-knowledge/\n5 domain docs"];
+    playbooks [label="faa-playbooks/\n4 *.devin.md playbooks"];
+    skills    [label="faa-skills/\n3 skill override JSON"];
+    smap      [label="SKILLS-MAP-FAA.md"];
+    {rank=same; knowledge; playbooks; skills; smap;}
+  }
+
+  base [label="COG-GTM/devinclaw\n(base framework, separate repo)", shape=box3d, fillcolor="#FFF4D6"];
+
+  layout -> page;
+  page -> client;
+  page -> server;
+  client -> data [label="imports"];
+  server -> data [label="imports"];
+  nextcfg -> out [style=dashed];
+  css -> out [style=dashed];
+  page -> out [style=dashed, label="prerendered"];
+  out -> browser [label="served as static files"];
+  browser -> fonts [style=dashed, label="CSS @import"];
+
+  skills -> playbooks [label="playbook / requiredKnowledge"];
+  skills -> knowledge [constraint=false];
+  playbooks -> knowledge [label="Context: Load"];
+  knowledge -> base [style=dashed, label="copied in by hand\n(see devinclaw/README.md)", dir=back];
+  data -> knowledge [style=invis];
+}

@@ -10,10 +10,11 @@ This directory contains the FAA-specific overlay for [DevinClaw](https://github.
    cd devinclaw
    ```
 
-2. **Copy this overlay into the base framework:**
+2. **Copy this overlay into the base framework** (from the `devinclaw` checkout, with this repo cloned as `cognition-faa`):
    ```bash
-   cp -r /path/to/cognition-faa-ui/devinclaw/* .
+   cp -r /path/to/cognition-faa/devinclaw/faa-* /path/to/cognition-faa/devinclaw/SKILLS-MAP-FAA.md .
    ```
+   Don't copy `devinclaw/*`: that would overwrite the base framework's own `README.md` with this file.
 
 3. **Configure your environment** per the base framework's setup guide, then layer in the FAA-specific skills and knowledge below.
 
