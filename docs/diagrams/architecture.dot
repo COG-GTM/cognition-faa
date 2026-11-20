@@ -6,7 +6,7 @@ digraph cognition_faa {
   edge  [fontname="DejaVu Sans", fontsize=13, color="#555555"];
 
   browser  [label="Browser\n(single page, #anchor nav)", shape=oval, fillcolor="#FFF4D6"];
-  fonts    [label="Google Fonts\n(Inter, JetBrains Mono)\nfetched by the browser", shape=oval, fillcolor="#FFF4D6"];
+  fonts    [label="Google Fonts\n(Inter, JetBrains Mono)\nreferenced, not loaded", shape=oval, fillcolor="#FFF4D6"];
 
   subgraph cluster_build {
     label="Build: npm run build (next build, output: \"export\")"; style="rounded"; color="#888888"; fontsize=16;
@@ -46,7 +46,7 @@ digraph cognition_faa {
   css -> out [style=dashed];
   page -> out [style=dashed, label="prerendered"];
   out -> browser [label="served as static files"];
-  browser -> fonts [style=dashed, label="CSS @import"];
+  browser -> fonts [style=dotted, label="CSS @import\n(ignored: after other rules)"];
 
   skills -> playbooks [label="playbook / requiredKnowledge"];
   skills -> knowledge [constraint=false];

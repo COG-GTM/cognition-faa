@@ -22,7 +22,7 @@ Source: [`diagrams/architecture.dot`](diagrams/architecture.dot), rendered to [P
 | Styling | Tailwind CSS 3 + PostCSS + Autoprefixer, custom `faa-blue` palette, Inter / JetBrains Mono | `tailwind.config.ts`, `postcss.config.mjs`, `app/globals.css` |
 | Output | Static export (`output: "export"`) to `out/` | `next.config.ts` |
 
-There is no API route, server action, middleware, environment variable, database or external API call. The only runtime network request besides the site's own files is the Google Fonts stylesheet `@import`ed in `app/globals.css`.
+There is no API route, server action, middleware, environment variable, database or external API call. `app/globals.css` `@import`s a Google Fonts stylesheet (Inter, JetBrains Mono), but the `@import` sits after the `@tailwind` directives, so it ends up after other rules in the built CSS. Browsers ignore it: no request goes to Google Fonts, and text renders in the fallback fonts from `tailwind.config.ts`. The browser loads only the site's own files.
 
 ### Rendering
 
