@@ -46,6 +46,6 @@ The site is one page (`/`). The top navigation and the hero buttons jump to sect
 
 ## Editing content
 
-Change card, list and detail text in `app/lib/data.ts`; each section component in `app/components/` renders exported arrays from it. Section headings, the hero headline and buttons, and the footer are written inline in their components. Section order is set in `app/page.tsx`. Colors and fonts are in `tailwind.config.ts` and `app/globals.css` (`globals.css` `@import`s Inter and JetBrains Mono from Google Fonts, but the import comes after the `@tailwind` rules, so browsers ignore it and the site renders in the fallback fonts).
+Change card, list and detail text in `app/lib/data.ts`; each section component in `app/components/` renders exported arrays from it. Section headings, the hero headline and buttons, and the footer are written inline in their components; the page title and description metadata are in `app/layout.tsx`. Section order is set in `app/page.tsx`. Colors and fonts are in `tailwind.config.ts` and `app/globals.css` (`globals.css` `@import`s Inter and JetBrains Mono from Google Fonts, but the import comes after the `@tailwind` rules, so browsers ignore it and the site renders in the fallback fonts).
 
 To change the architecture diagram, edit `docs/diagrams/architecture.dot` and run `docs/diagrams/render.sh` (needs Graphviz: `sudo apt-get install graphviz`), then commit the `.dot`, `.png` and `.svg` together.
